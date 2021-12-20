@@ -25,7 +25,7 @@ spring:
           predicates:
             - Path=/dressuur/**
         - id: authMicroservice
-          uri: http://10.0.154.30:9003/
+          uri: http://platform-authentication-service:9003/
           predicates:
             - Path=/auth/**
 
