@@ -21,20 +21,24 @@ spring:
               - OPTIONS
       routes:
         - id: dressuurMicroservice
-          uri: http://10.0.37.227:9002/
+          uri: http://localhost:9002/
           predicates:
             - Path=/dressuur/**
+          filters:
+            - AddResponseHeader=Access-Control-Allow-Origin, *
         - id: authMicroservice
           uri: http://platform-authentication-service:9003/
           predicates:
             - Path=/auth/**
+          filters:
+            - AddResponseHeader=Access-Control-Allow-Origin, *
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone : http://10.0.28.155:8761/eureka
-  instance:
-    hostname: gatewayserver
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone : http://localhost:8761/eureka
+#  instance:
+#    hostname: gatewayserver
 
