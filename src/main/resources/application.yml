@@ -21,7 +21,7 @@ spring:
               - OPTIONS
       routes:
         - id: dressuurMicroservice
-          uri: http://10.0.37.227:9002/
+          uri: http://platform-dressuur-service:9002/
           predicates:
             - Path=/dressuur/**
         - id: authMicroservice
@@ -34,7 +34,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone : http://10.0.28.155:8761/eureka
+      defaultZone : http://platform-gateway-service:8761/eureka
   instance:
     hostname: gatewayserver
 
